@@ -11,7 +11,7 @@ fullscreen = 0
 
 [buildozer]
 log_level = 2
-warn_on_root = 0
+warn_on_root = 0   ; جلوگیری از خطای root
 
 [android]
 android.api = 36
@@ -21,4 +21,4 @@ android.ndk_api = 21
 android.permissions = READ_MEDIA_IMAGES, READ_MEDIA_VIDEO, READ_MEDIA_AUDIO
 android.archs = arm64-v8a, armeabi-v7a
 android.allow_backup = True
-android.accept_sdk_license = True
+android.accept_sdk_license = True   ; جلوگیری از خطای لایسنس
