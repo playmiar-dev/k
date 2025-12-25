@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = ماشین حساب
+title : myapp
 
 # (str) Package name
 package.name = calculator
