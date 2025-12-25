@@ -1,0 +1,36 @@
+name: Build Kivy APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache build artifacts
+        uses: actions/cache@v4
+        with:
+          path: |
+            .buildozer
+            .buildozer_global
+          key: buildozer-${{ runner.os }}-${{ hashFiles('buildozer.spec') }}
+          restore-keys: |
+            buildozer-${{ runner.os }}-
+
+      - name: Build APK with Docker
+        run: |
+          docker pull kivy/buildozer
+          docker run --rm -v $PWD:/home/user/app -w /home/user/app \
+            kivy/buildozer buildozer android dudg
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: apk
+          path: bin/*.apk
