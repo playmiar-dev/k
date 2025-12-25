@@ -1,5 +1,5 @@
 def calculator():
-    print("ماشین حساب ساده پایتون")
+    print("ماشین  حساب ساده پایتون")
     print("عملیات موجود: +  -  *  /")
 
     while True:
