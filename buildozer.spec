@@ -14,7 +14,7 @@ log_level = 2
 warn_on_root = 0   ; جلوگیری از خطای root
 
 [android]
-android.api = 36
+android.api = 33          ; نسخه پایدارتر برای SDK
 android.minapi = 21
 android.ndk = 23b
 android.ndk_api = 21
