@@ -18,16 +18,18 @@ jobs:
         with:
           path: |
             .buildozer
-            .buildozer_global
+            ~/.buildozer
           key: buildozer-${{ runner.os }}-${{ hashFiles('buildozer.spec') }}
           restore-keys: |
             buildozer-${{ runner.os }}-
 
       - name: Build APK with Docker
         run: |
-          docker pull kivy/buildozer:stable
-          docker run --rm -v $PWD:/home/user/app -w /home/user/app \
-            kivy/buildozer:stable android debug
+          docker pull kivy/buildozer:latest
+          docker run --rm \
+            -v $PWD:/home/user/app \
+            -w /home/user/app \
+            kivy/buildozer:latest android debug
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
