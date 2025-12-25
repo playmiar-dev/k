@@ -5,13 +5,13 @@ package.domain = org.mbb
 source.dir = .
 source.include_exts = ttf,txt,py,kv,jpg,png,mp3,json
 version = 3.0.1
-requirements = python3,kivy,python-bidi==0.4.2,arabic_reshaper,android,plyer
+requirements = python3,kivy
 orientation = portrait
 fullscreen = 0
 
 [buildozer]
 log_level = 2
-warn_on_root = 1
+warn_on_root = 0
 
 [android]
 android.api = 36
